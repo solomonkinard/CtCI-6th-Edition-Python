@@ -2,26 +2,26 @@ from LinkedList import LinkedList
 
 
 def is_palindrome(ll):
-    fast = slow = ll.head
-    stack = []
+  fast = slow = ll.head
+  stack = []
 
-    while fast and fast.next:
-        stack.append(slow.value)
-        slow = slow.next
-        fast = fast.next.next
+  while fast and fast.next:
+    stack.append(slow.value)
+    slow = slow.next
+    fast = fast.next.next
 
-    if fast:
-        slow = slow.next
+  if fast:
+    slow = slow.next
 
-    while slow:
-        top = stack.pop()
+  while slow:
+    top = stack.pop()
 
-        if top != slow.value:
-            return False
+    if top != slow.value:
+      return False
 
-        slow = slow.next
+    slow = slow.next
 
-    return True
+  return True
 
 
 ll_true = LinkedList([1, 2, 3, 4, 5, 4, 3, 2, 1])
